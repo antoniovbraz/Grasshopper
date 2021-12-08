@@ -22,3 +22,25 @@ for (const x of [
   console.log(x)
   console.log()
 }
+
+// Decodificador de imagem
+// Neste desafio, você usará uma if statement dentro de um laço for...of para
+// revelar uma imagem. Cada vez que o laço for...of faz uma iteração,
+// a if statement aninhada dentro dele testará a letter atual em palavra.
+
+let palavra = 'antonio henrique'
+
+for (let letter of palavra) {
+  if (letter !== 'e') {
+    console.log(letter);
+  }
+}
+
+// Qual direção?
+// Qual será a saída deste código?
+
+for (const element of [5,4,3,2,0,1]) {
+  console.log(element)
+}
+
+// 5,4,3,2,0,1
