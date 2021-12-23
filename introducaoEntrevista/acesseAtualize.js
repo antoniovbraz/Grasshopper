@@ -81,3 +81,123 @@ i = 2
 neighborIndex = i + 1
 
 console.log(array[i] + ',' + array[neighborIndex])
+
+function getNeighbor(arr, i) {
+  let neighborIndex = i + 1
+  return arr[neighborIndex]
+}
+console.log(
+  'The neighbor to ' + array[index] + ' is ' + getNeighbor(array, index),
+)
+
+// Um laço for clássico tem três componentes:
+
+// A variável iterativa e o valor inicial: let i = 0
+// O teste para determinar se o laço deve continuar em laço: i < 10
+// E como a variável iterativa deve mudar após cada laço: i++
+
+// A variável iterativa é definida antes do bloco de código {} ser executado e o teste é verificado antes de cada laço do código.
+// A variável iterativa só é atualizada após o bloco de código do laço ter sido executado.
+
+for (let i = 0; i < 2; i++) {
+  console.log(i)
+}
+
+// No código de exemplo acima, o laço flui por essas etapas:
+
+// 1. Definindo o valor da variável inicial de i para 0
+// 2. Testando se o laço deve estar em execução enquanto i é 0
+// 3. Executando o bloco de código console.log(i)
+// 4. Atualização de i para 1
+// 5. Testando se o laço deve estar em execução enquanto i é 1
+// 6. Executando o bloco de código console.log(i)
+// 7. Atualização de i para 2
+// 8. Testando se o laço deve estar sendo executando enquanto i é 2
+// 9. Isso significa que o código registrará 0 e 1 no console.
+
+// Ao acessar elementos vizinhos de uma array em um laço for clássico, é importante definir um ponto inicial ou final correto para o laço.
+
+// Por exemplo, o seguinte laço for clássico tem um bug nele:
+
+for (let i = 0; i < array.length - 1; i++) {
+  let neighborIndex = i + 1
+  console.log(array[neighborIndex])
+}
+// Se existissem 7 elementos na array, o que aconteceria quando i fosse 6?
+
+// Lembre-se, a indexação da array começa em 0.
+
+array = ['lemon', 'apple', 'orange']
+
+for (let i = 0; i < array.length - 1; i++) {
+  let neighborIndex = i + 1
+  console.log(array[neighborIndex])
+}
+
+// Se o código dentro de um laço for clássico verifica os elementos vizinhos antes do índice atual, verifique se o laço não começa em 0.
+
+// Por exemplo:
+
+for (let i = 1; i < array.length; i++) {
+  neighborBefore = i - 1
+  console.log(array[neighborBefore])
+}
+
+// Neste exemplo, i é inicialmente definido como 1. Isso significa que console.log(array[i - 1]) imprime o elemento em índice 0.
+
+// Se i fosse definido como 0, então console.log(array[i - 1])
+// tentaria imprimir o elemento em índice -1, que não existe (índices de array não podem ser negativos).
+
+// let array = ['lemon', 'apple', 'orange']
+
+for (let i = 1; i < array.length; i++) {
+  console.log(array[i - 1])
+}
+
+// Tudo o que você aprendeu nas últimas lições sobre arrays também pode ser aplicado a strings.
+// É possível acessar caracteres individuais em uma string da mesma forma que acessa itens individuais em uma array.
+
+// Por exemplo, 'fruit'[0] acessa o 1º caractere em 'fruit'.
+
+// Como você acessaria o 't' em 'fruit'?
+
+let lastIndex = 'fruit'.length - 1
+console.log('fruit'[lastIndex])
+
+// Fazer um laço pelos caracteres em uma string é como fazer um laço pelos itens de uma array. Por exemplo:
+
+for (let index = 0; index < 'fruit'.length; index++) {
+  console.log('fruit'[index])
+}
+
+// O código acima imprime todos os caracteres em 'fruit'.
+
+// index começa em 0 e incrementa em 1 cada vez que o laço é executado até atingir o número índice para o último caractere e o laço para.
+
+// Também é possível acessar caracteres adjacentes em uma string da mesma forma que faz com os itens em uma array.
+
+// Dado um número índice, i, você pode usar i + 1 ou i - 1 para acessar seus vizinhos.
+
+// O que é string[neighborIndex]?
+
+let string = 'JavaScript'
+i = 3
+neighborIndex = i - 1
+console.log(string[neighborIndex])
+console.log()
+
+// Por exemplo, se você usar i - 1 dentro de um laço, então o laço deve começar no 2º caractere.
+
+for (let i = 1; i < 'fruit'.length; i++) {
+  let neighborIndex = i - 1
+  console.log('fruit'[i])
+  console.log('fruit'[neighborIndex])
+}
+
+// Se você usar i + 1 dentro de um laço, então o laço deve terminar no penúltimo caractere.
+
+for (let i = 0; i < 'fruit'.length - 1; i++) {
+  let neighborIndex = i + 1
+  console.log('fruit'[i])
+  console.log('fruit'[neighborIndex])
+}
